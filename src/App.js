@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import OfferOrAnswer from './OfferOrAnswer'
+import Answer from './Answer'
+import Offer from './Offer'
+import Connect from './Connect';
+import { useState } from 'react'
+import {getICEServers} from './data'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-function App() {
+import { AppContext } from "./context/AppContext";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/home",
+    element: <OfferOrAnswer/>,
+  },
+  {
+    path: "/offer",
+    element: <Offer/>,
+  },
+  {
+    path: "/answer",
+    element: <Answer/>,
+  },
+  {
+    path: "/connect",
+    element: <Connect/>,
+  }
+]);
+
+const App = () => {
+  const [peerConnection, setPeerConnection] = useState(() => new RTCPeerConnection(getICEServers()));
+  const [displayOffer, setDisplayOffer] = useState()
+  const [videoYou, setVideoYou] = useState()
+  const [videoThem, setVideoThem] = useState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppContext.Provider 
+          value = {{ 
+            valueOne: [peerConnection, setPeerConnection], 
+            valueTwo:[displayOffer, setDisplayOffer],
+            valueThree:[videoYou, setVideoYou],
+            valueFour:[videoThem, setVideoThem]
+
+      }} >
+        <RouterProvider router={router} />
+      </AppContext.Provider>
     </div>
   );
 }
