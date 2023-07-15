@@ -45,8 +45,7 @@ const Offer = () => {
         <div id="OfferPageComponentAnswerBackMessage" className="message">
           Please add the received answer here
         </div>
-        <textarea id="OfferPageComponentAnswerReceived">
-          Hi
+        <textarea id="OfferPageComponentAnswerReceived" placeholder="Enter...">
         </textarea>
         <button id="OfferPageComponentButton"onClick={navigateToConnectPage}>Answer Back</button>
       </div>

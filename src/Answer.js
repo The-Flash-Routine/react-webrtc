@@ -31,14 +31,13 @@ const Answer = () => {
         <div id="AnswerPageComponentOfferMessage" className="message">
           Please add the received offer here
         </div>
-        <textarea id="AnswerPageComponentOfferReceived">
-          Hi
+        <textarea id="AnswerPageComponentOfferReceived" placeholder="Enter...">
         </textarea>
         <div id="AnswerPageComponentAnswerMessage" className="message">
           Please share the generated answer
         </div>
         <button id="AnswerPageComponentButton" onClick={generateAnswer}>Generate Answer</button>
-        <textarea id="AnswerPageComponentAnswer">
+        <textarea id="AnswerPageComponentAnswer" placeholder="Enter...">
         </textarea>
         <button id="AnswerPageComponentConnectButton" onClick={navigateToConnectPage}>Connect</button>
       </div>
