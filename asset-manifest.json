@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-webrtc/static/css/main.6916fa02.css",
+    "main.js": "/react-webrtc/static/js/main.4e716c8d.js",
+    "index.html": "/react-webrtc/index.html",
+    "main.6916fa02.css.map": "/react-webrtc/static/css/main.6916fa02.css.map",
+    "main.4e716c8d.js.map": "/react-webrtc/static/js/main.4e716c8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6916fa02.css",
+    "static/js/main.4e716c8d.js"
+  ]
+}
