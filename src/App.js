@@ -6,16 +6,20 @@ import Connect from './Connect';
 import { useState } from 'react'
 import {getICEServers} from './data'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
 import { AppContext } from "./context/AppContext";
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/home",
+    element: <OfferOrAnswer/>,
+  },
+  {
+    path: "/",
     element: <OfferOrAnswer/>,
   },
   {
