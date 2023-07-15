@@ -12,8 +12,7 @@ import {
 
 import { AppContext } from "./context/AppContext";
 
-
-const router = createHashRouter([
+const routes = [
   {
     path: "/home",
     element: <OfferOrAnswer/>,
@@ -34,7 +33,9 @@ const router = createHashRouter([
     path: "/connect",
     element: <Connect/>,
   }
-]);
+]
+// Adding basename as GitHub pages will put repository name as prefic to all paths
+const router = createHashRouter(routes, { basename: "/" });
 
 const App = () => {
   const [peerConnection, setPeerConnection] = useState(() => new RTCPeerConnection(getICEServers()));
